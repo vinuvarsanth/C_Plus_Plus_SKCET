@@ -1,0 +1,520 @@
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PSCPP_Basics_ClassWork
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1]
+
+Single File Programming Question
+Write a program to print the ASCII value of a character
+Input format :
+Input consist of a character
+Output format :
+Output prints the ASCII value of the character
+Sample test cases :
+Input 1 :
+a
+Output 1 :
+97
+Input 2 :
+b
+Output 2 :
+98
+Input 3 :
+A
+Output 3 :
+65
+
+#include<iostream> // this library contains cin and cout functions.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    char any_character; // data type declared with the variable.
+    cin>>any_character;
+    cout<<int(any_character); // Primitive data types - byte,short,int,long,float,double,boolean,char.
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2]
+
+Single File Programming Question
+Write a program to multiply two integers
+Input format :
+Input consists of two integers separated by space
+Output format :
+Output prints the multiplied value
+Sample test cases :
+Input 1 :
+10 5
+Output 1 :
+50
+Input 2 :
+231 43
+Output 2 :
+9933
+
+#include<iostream> // this library contains cin and cout functions.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    int num1,num2; // data type declared with the variables.
+    cin>>num1>>num2;
+    cout<<(num1*num2); // Multiplication.
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3]
+
+Single File Programming Question
+Write a program that accepts two integers as input and prints their sum.
+Input format :
+The input consists of two integers separated by a space.
+Output format :
+The output prints their sum.
+Sample test cases :
+Input 1 :
+10 20
+Output 1 :
+30
+Input 2 :
+258 965
+Output 2 :
+1223
+
+#include<iostream> // this library contains cin and cout functions.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    int num1,num2; // data type declared with the variables.
+    cin>>num1>>num2;
+    cout<<(num1+num2); // Addition.
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+4]
+
+Single File Programming Question
+Customized Welcome Message
+Nikhil, the founder of “Pine Tree” company wished to design an Event Management System that would let its Customers plan and host events seamlessly via an online platform.
+As a part of this requirement, Nikhil wanted to write a piece of code for his company’s Examly Event Management System that will display customized welcome messages by taking Customers’ name as input. Help Nikhil on the task.
+Input format :
+First line of the input is a string that corresponds to a Customer’s name. 
+Output format :
+Output should display the welcome message along with the Customer’s name
+Sample test cases :
+Input 1 :
+Benny
+Output 1 :
+Hello Benny! Welcome to Examly Event Management System
+
+#include<iostream> // this library contains cin and cout functions.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    string name; // data type declared with the variables.
+    cin>>name;
+    cout<<"Hello "<<name<<"! Welcome to Examly Event Management System";
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+5]
+
+Single File Programming Question
+Write a program that accepts a user name and password as input and prints the same.
+Input format :
+The input consists of the user name and password separated by a space.
+Output format :
+The output prints the username and password separated by tab space.
+Sample test cases :
+Input 1 :
+alice alice01
+Output 1 :
+alice	alice01
+
+#include<iostream> // this library contains cin and cout functions.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    string user_name,password ; // data type declared with the variables.
+    cin>>user_name>>password;
+    cout<<user_name<<"\t"<<password; // "\t" provides 4 spaces.
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+IRC_CPP_Basic_Practice at Home
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1]
+
+Single File Programming Question
+Write a program to obtain and display the newly joined student name and age detail.
+Input format :
+The first input is a string that corresponds to the name of the student
+The second input is an integer that corresponds to the age of the student
+Output format :
+The output should display the details as given in the sample output.
+<name> age is <age>
+Sample test cases :
+Input 1 :
+ram
+30
+Output 1 :
+ram age is 30
+
+#include<iostream> // this library contains cin and cout functions.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    string name; // data type declared with the variables.
+    int age; // data type declared with the variables.
+    cin>>name>>age;
+    cout<<name<<" age is "<<age;
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2]
+
+Single File Programming Question
+Write a program to multiply two floating-point numbers.
+Input format :
+The input consists of two floating-point numbers.
+Output format :
+The output prints the product.
+Note : Only 2 digits should print after decimal
+Sample test cases :
+Input 1 :
+2.4
+1.12
+Output 1 :
+2.69
+Input 2 :
+2.25
+3.248
+Output 2 :
+7.31
+
+#include<iostream> // this library contains cin and cout functions.
+#include<iomanip> // this library contains fixed setprecision for floating numbers.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    float num1,num2,result; // data type declared with the variables.
+    cin>>num1>>num2;
+    result = num1*num2; // Multiplication of two float numbers.
+    cout<<fixed<<setprecision(2)<<result; // Fixing the precision value as 2 after decimal point.
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3]
+
+Single File Programming Question
+Write a program to convert Celsius to Fahrenheit formula, F = 1.8 C + 32.
+Input format :
+The input consists of the value of celsius.
+Output format :
+The output prints the Fahrenheit value.
+Note : Print only two digits after decimal
+Sample test cases :
+Input 1 :
+51
+Output 1 :
+123.80
+Input 2 :
+48
+Output 2 :
+118.40
+
+#include<iostream> // this library contains cin and cout functions.
+#include<iomanip> // this library contains fixed setprecision for floating numbers.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    float Celsius,Result_Fahrenheit; // data type declared with the variables.
+    cin>>Celsius;
+    Result_Fahrenheit = (1.8 * Celsius) + 32 ; // to convert Celsius to Fahrenheit formulae.
+    cout<<fixed<<setprecision(2)<<Result_Fahrenheit; // Fixing the precision value as 2 after decimal point.
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+4]
+
+Single File Programming Question
+Write a program that accepts a char, int, and float as input and prints the same.
+Input format :
+The input consists of a char, int, and float separated by a space.
+Output format :
+The output prints the char, int, and float values separated by a space.
+Round off the float value to two decimal places.
+Sample test cases :
+Input 1 :
+a 10 15.2
+Output 1 :
+a 10 15.20
+Input 2 :
+b  25 85.258
+Output 2 :
+b 25 85.26
+
+#include<iostream> // this library contains cin and cout functions.
+#include<iomanip> // this library contains fixed setprecision for floating numbers.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    char letter; // data type declared with the variables.
+    int num1; // data type declared with the variables.
+    float num2; // data type declared with the variables.
+    cin>>letter>>num1>>num2;
+    cout<<letter<<" "<<num1<<" ";
+    cout<<fixed<<setprecision(2)<<num2; // Fixing the precision value as 2 after decimal point.
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+5]
+
+Single File Programming Question
+Write a program to compute the quotient and remainder for integer values
+Input format :
+Input consists of the dividend and divisor separated by space
+Output format :
+Output prints the quotient and remainder
+Sample test cases :
+Input 1 :
+10 2
+Output 1 :
+5 0
+
+#include<iostream> // this library contains cin and cout functions.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    int divident,divisor,quotient,remaind; // data type declared with the variables.
+    cin>>divident>>divisor;
+    quotient = divident / divisor;
+    remaind = divident % divisor; // if divident is small than that of divisor then divident will be displayed directly.
+    cout<<quotient<<" "<<remaind;
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+IRC_CPP_Basics_Challenge Yourself
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1]
+
+Single File Programming Question
+Vikram buys an old scooter for Rs. A and spends Rs. B on its repairs. If he sells the scooter for Rs. C, what is his gain %?
+Write a program to compute the gain %.
+Input format :
+The first line of the input consists of the price of the scooter
+The second line of the input consists of repair charges
+The third line of the input consists of the selling price.
+(Refer Sample Input)
+Output format :
+The output prints the gain percentage and round off to two decimal places.
+(Refer Sample Output)
+Sample test cases :
+Input 1 :
+40200
+1800
+52000
+Output 1 :
+23.81
+
+#include<iostream> // this library contains cin and cout functions.
+#include<iomanip> // this library contains fixed setprecision for floating numbers.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    float buying_price,repair_charges,selling_price,gain_percentage; // data type declared with the variables.
+    cin>>buying_price>>repair_charges>>selling_price;
+    gain_percentage = ((selling_price-(buying_price+repair_charges))/(buying_price+repair_charges))*100;
+    // GAIN PERCENTAGE = [ (S.P-C.P)/C.P ]*100 , LOSS PERCENTAGE = [ (C.P-S.P)/C.P ]*100 .
+    cout<<fixed<<setprecision(2)<<gain_percentage; // Fixing the precision value as 2 after decimal point.
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2]
+
+Single File Programming Question
+Write a program to calculate the simple interest.
+Input format :
+The input consists of the amount, rate of interest, and time period(in years) separated by a space.
+Output format :
+The output prints the simple interest with two decimal places.
+Sample test cases :
+Input 1 :
+155 3 1
+Output 1 :
+4.65
+Input 2 :
+100 2 3
+Output 2 :
+6.00
+
+#include<iostream> // this library contains cin and cout functions.
+#include<iomanip> // this library contains fixed setprecision for floating numbers.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    float amount,rate_of_interest,time_period,simple_interest; // data type declared with the variables.
+    cin>>amount>>rate_of_interest>>time_period;
+    simple_interest = (amount*rate_of_interest*time_period ) / 100; // formula for simple interest.
+    cout<<fixed<<setprecision(2)<<simple_interest; // Fixing the precision value as 2 after decimal point.
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026_DailyChallenge_CPP
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1]
+
+Single File Programming Question
+Write a program to display a string in the following format.
+eg: Input
+Hi
+Welcome
+Output
+Hi and Welcome
+Input format :
+The input consists of two strings.
+Output format :
+The output prints the final string.
+Sample test cases :
+Input 1 :
+Hi
+Welcome
+Output 1 :
+Hi and Welcome
+Input 2 :
+Laugh
+Live
+Output 2 :
+Laugh and Live
+
+#include<iostream> // this library contains cin and cout functions.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    string string_1,string_2; // data type declared with the variables.
+    cin>>string_1>>string_2;
+    cout<<string_1<<" and "<<string_2;
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2]
+
+Single File Programming Question
+Write a program that accepts a char, int, and float as input and prints the same.
+Input format :
+The input consists of a char, int, and float separated by a space.
+Output format :
+The output prints the char, int, and float values separated by a space.
+Round off the float value to two decimal places.
+Sample test cases :
+Input 1 :
+a 10 15.2
+Output 1 :
+a 10 15.20
+Input 2 :
+b  25 85.258
+Output 2 :
+b 25 85.26
+
+#include<iostream> // this library contains cin and cout functions.
+#include<iomanip> // this library contains fixed setprecision for floating numbers.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    char letter; // data type declared with the variables.
+    int num1; // data type declared with the variables.
+    float num2; // data type declared with the variables.
+    cin>>letter>>num1>>num2;
+    cout<<letter<<" "<<num1<<" ";
+    cout<<fixed<<setprecision(2)<<num2; // Fixing the precision value as 2 after decimal point.
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3]
+
+Single File Programming Question
+Problem Statement :
+Write a program to perform arithmetic operations such as addition, subtraction, multiplication, and division. 
+Input format :
+Input consists of two integers
+Output format :
+The output prints the result of each operation [addition, subtraction, multiplication, division].
+Sample test cases :
+Input 1 :
+10
+20
+Output 1 :
+30
+-10
+200
+0
+Input 2 :
+20
+14
+Output 2 :
+34
+6
+280
+1
+
+#include<iostream> // this library contains cin and cout functions.
+#include<iomanip> // this library contains fixed setprecision for floating numbers.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    
+    int num1,num2; // data type declared with the variables.
+    cin>>num1>>num2;
+    cout<<(num1+num2)<<"\n"; // addition.
+    cout<<(num1-num2)<<"\n"; // subtraction.
+    cout<<(num1*num2)<<endl; // multiplication.
+    cout<<(num1/num2)<<"\n"; // division.
+    // "/n" means new line, we can also use endl as shown above.
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+4]
+
+Single File Programming Question
+Problem Statement :
+Naming Ceremony
+Hermoine and Ron were blessed with a baby. They need to name their child and the priest doesn't know the actual spelling of it. So, help them to get and display the child's name.
+Input format :
+The input contains a string that denotes the name of the child.
+Output format :
+The output prints the name of the child.
+Note: The name should not contain spaces according to astrology.
+Sample test cases :
+Input 1 :
+Harry
+Output 1 :
+Harry
+Input 2 :
+Rose
+Output 2 :
+Rose
+
+#include<iostream> // this library contains cin and cout functions.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    string name; // data type declared with the variables.
+    cin>>name;
+    cout<<name;
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
