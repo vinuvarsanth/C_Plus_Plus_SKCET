@@ -1,0 +1,779 @@
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PSCPP_Operators_ClassWork
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1]
+
+Single File Programming Question
+Problem Statement :
+Average Calculation
+A teacher wants to compute the average of 5 students in her class. Write a program to help her to find the average. The average is the sum of all the numbers, then divided by the total numbers.
+Input format :
+First input: 1st student mark in float
+Second input: 2nd student mark in float
+Third input: 3rd student mark in float
+Fourth input: 4th student mark in float
+Fifth input: 5th student mark in float
+Output format :
+The output value should be in the float with 2 decimal places.
+Sample test cases :
+Input 1 :
+1
+2
+3
+4
+5
+Output 1 :
+3.00
+Input 2 :
+10
+20
+30
+40
+50
+Output 2 :
+30.00
+
+#include<iostream> // this library contains cin and cout functions.
+#include<iomanip> // this library contains fixed setprecision for floating numbers.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    float mark_1,mark_2,mark_3,mark_4,mark_5,average; // data type declared with the variable.
+    cin>>mark_1>>mark_2>>mark_3>>mark_4>>mark_5;
+    average = (mark_1+mark_2+mark_3+mark_4+mark_5)/5; // Average of 5 student's marks.
+    cout<<fixed<<setprecision(2)<<average; // Fixing the precision value as 2 after decimal point.
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2]
+
+Single File Programming Question
+Problem Statement :
+Ternary Operator﻿
+The conditional operator is also known as the ternary operator [exp? true: false] can be used to make an either-or choice. Write a program to get a number from the user and find out whether it is odd or even.
+Input format :
+The input containing integer denotes the given number 
+Output format :
+If the given number is even, print "Even". Otherwise, print "Odd".
+Sample test cases :
+Input 1 :
+2
+Output 1 :
+Even
+Input 2 :
+3
+Output 2 :
+Odd
+
+#include<iostream> // this library contains cin and cout functions.
+#include<iomanip> // this library contains fixed setprecision for floating numbers.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    int number; // data type declared with the variable.
+    cin>>number;
+    (number%2==0) ? cout<<"Even" : cout<<"Odd"; // Ternary operator  [exp? true: false].
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3]
+
+Single File Programming Question
+Problem Statement:
+Evaluation of expression:
+Sasikumar is a mathematics teacher and he is preparing a question paper of his own, So he needs to calculate the answers to the questions he prepared without any errors. As he is busy with his work he has no time to make it.
+Write the program and trace the output for the following expressions:
+a) x = a + b * 5 / 4 + c % 3 * 5, where a, b and c are variables ( inputs ).
+b) y = u >v ? u : v ; where u and v are variables ( inputs ).
+c) z = ++i&& ++j && ++k; where i, j, and k are variables ( inputs ).
+Input format :
+3 integer inputs are needed, for the first expression,
+2 integer inputs are needed, for the second expression and
+3 integer inputs are needed, for the third expression.
+Output format :
+The output consists of the answers for the equations after substituting their corresponding values.
+Sample test cases :
+Input 1 :
+5
+3
+14
+2
+4
+-5
+6
+0
+Output 1 :
+x = 18
+y = 4
+z = 1
+Input 2 :
+99
+84
+27
+4
+574
+738
+85
+382
+Output 2 :
+x = 204
+y = 574
+z = 1
+
+#include<iostream> // this library contains cin and cout functions.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    int x,y,z,a,b,c,u,v,i,j,k; // data type declared with the variable.
+    cin>>a>>b>>c>>u>>v>>i>>j>>k;
+    x = a + b * 5 / 4 + c % 3 * 5; //the precedence of operators is checked from left to right. [ * / % + - ].
+    y = u>v ? u:v; // Ternary operator  [exp? true: false].
+    z = ++i && ++j && ++k; // Since all conditions are true,(non-zero).Pre-increment so value increases and moves right side so k=1 so only z is true.
+    cout<<"x = "<<x<<"\n";
+    cout<<"y = "<<y<<endl; // "/n" means new line, we can also use endl as shown above.
+    cout<<"z = "<<z<<"\n"; 
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+4]
+
+Single File Programming Question
+MILEAGE REMUNERATION CALCULATOR
+Write a program that calculates mileage remuneration for a salesperson at a rate of Rs.25 per mile. Your program should interact with the user in this manner:
+Sample Output 1: (Explanation)
+Enter beginning odometer reading: 13505.2
+Enter ending odometer reading: 13810.6
+You traveled 305.4 miles. At Rs.25 per mile, your remuneration is Rs.7635
+Note: Display the output to two decimal places and round the remuneration value.
+Input format :
+The input consists of the values of the beginning and ending odometer reading separated by a space.
+Output format :
+The output prints the distance traveled and remuneration separated by a space.
+Sample test cases :
+Input 1 :
+13505.2 13810.6
+Output 1 :
+305.40 7635.00
+Input 2 :
+15261.25  18245.70
+Output 2 :
+2984.45 74611.00
+
+#include<iostream> // this library contains cin and cout functions.
+#include<iomanip> // this library contains fixed setprecision for floating numbers.
+#include<cmath> // inbuilt mathematical functions containing library.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    float beginning_odometer,ending_odometer,traveled_distance,amount; // data type declared with the variable.
+    cin>>beginning_odometer>>ending_odometer;
+    traveled_distance=ending_odometer - beginning_odometer; // distance traveled is calculated.
+    amount=traveled_distance * 25; // amount is calculated.
+    cout<<fixed<<setprecision(2)<<traveled_distance<<" "<<round(amount); /* roundoff the decimal value to an whole numbers can be 
+    used only for double,long double,float it won't work for int data type. */
+    // Fixing the precision value as 2 after decimal point.
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+5]
+
+Single File Programming Question
+Seetha, a newly joined maths teacher explained percentage concept in her class. She asked the student to calculate their attendance percentage based on the number of working days and the number of days the student is present. She asked the student to calculate the attendance percentage with decimal places truncated. (Ex. 75.89% as 75%)
+Help students to calculate the attendance percentage.
+Note : Display the output with % symbol
+Input format :
+Input consists of two floating point values.
+Number of working days in first line
+Number of days present in second line
+Output format :
+Attendance percentage with decimal truncated
+Sample test cases :
+Input 1 :
+365
+200
+Output 1 :
+54%
+Input 2 :
+934876.76543
+173438.67
+Output 2 :
+18%
+
+#include<iostream> // this library contains cin and cout functions.
+#include<cmath> // inbuilt mathematical functions containing library.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    float working_days,days_present,attendance_percentage; // data type declared with the variable.
+    cin>>working_days>>days_present;
+    attendance_percentage= (days_present/working_days)*100; // present days / total X 100 gives Attendance Percentage.
+    cout<<trunc(attendance_percentage)<<"%"; // remove the decimal point.
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PSCPP_Operators_Practice at Home
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1]
+
+Single File Programming Question
+Problem Statement :
+Area Calculation
+Sheela has three things in her bag. She wants to compute the area of 3 things but 3 things are in different shapes. The three things are a square shape, rectangular shape, and circular shape respectively. Write a program to help Sheela to calculate the area of different shapes.
+Input format :
+First input: a side of a square in integer
+Second input: length of a rectangle in integer
+Third input: breadth of a rectangle in integer
+Fourth input: radius of a circle in float
+Output format :
+The first output should be the area of a square in integer
+The second output should be the area of a rectangle in integer
+The third output should be the area of a circle in the float with 2 decimal places
+Sample test cases :
+Input 1 :
+5
+5
+4
+2.0
+Output 1 :
+25
+20
+12.56
+Input 2 :
+2
+3
+5
+4.0
+Output 2 :
+4
+15
+50.24
+
+#include<iostream> // this library contains cin and cout functions.
+#include<iomanip> // this library contains fixed setprecision for floating numbers.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    int side_of_square,length_of_rectangle,breadth_of_rectangle; // data type declared with the variable.
+    float radius_of_circle; // data type declared with the variable.
+    cin>>side_of_square>>length_of_rectangle>>breadth_of_rectangle>>radius_of_circle; // getting inputs.
+    cout<<(side_of_square*side_of_square)<<endl; // area of square. 
+    cout<<(length_of_rectangle*breadth_of_rectangle)<<"\n"; // area of rectangle.
+    // "/n" means new line, we can also use endl as shown above.
+    cout<<fixed<<setprecision(2)<<(3.14*radius_of_circle*radius_of_circle); // area of circle.
+    // Fixing the precision value as 2 after decimal point.
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2]
+
+Single File Programming Question
+Raju's father is a merchant navy officer who travels across the world. He returned home with a gift for Raju, a brand new digital watch. The watch displays all the metrics related to time(up to seconds).
+Raju wants to write a program to check the values displayed on the watch. Help Raju by writing a suitable code.
+Input format :
+Hours, Minutes and Seconds in first line separated by space as shown in sample input
+Output format :
+Display the given time in hours, minutes and seconds as shown in the sample output.
+Note : Display upto 4 decimals
+Code constraints :
+0<=Hour<=24
+0<=Minute<=60
+0<=Second<=60
+Sample test cases :
+Input 1 :
+2 45 45
+Output 1 :
+2.7625 hours
+165.7500 minutes
+9945.0000 seconds
+
+#include<iostream> // this library contains cin and cout functions.
+#include<iomanip> // this library contains fixed setprecision for floating numbers.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    float i_hours,i_minutes,i_seconds; // data type declared with the variable.
+    float o_hours,o_minutes,o_seconds; // data type declared with the variable.
+    cin>>i_hours>>i_minutes>>i_seconds; // getting inputs.
+    o_hours=(i_hours+(i_minutes/60)+(i_seconds/3600)); // converts entire data into hours.
+    o_minutes=((i_hours*60)+(i_minutes)+(i_seconds/60)); // converts entire data into minutes.
+    o_seconds=((i_hours*3600)+(i_minutes*60)+i_seconds); // converts entire data into seconds.
+    cout<<fixed<<setprecision(4)<<o_hours<<" hours"<<endl; 
+    cout<<fixed<<setprecision(4)<<o_minutes<<" minutes"<<"\n"; // "/n" means new line, we can also use endl as shown above.
+    cout<<fixed<<setprecision(4)<<o_seconds<<" seconds"<<endl;
+    // Fixing the precision value as 4 after decimal point.
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3]
+
+Single File Programming Question
+Problem Statement :
+Sports day Celebration
+Training for sports day has begun and the physical education teacher has decided to conduct some team games. The teacher wants to split the students in higher secondary into equal-sized teams. In some cases, there may be some students who are left out from the teams and he wanted to use the left out, students, to assist him in conducting the team games. For instance, if there are 50 students in a class and if the class has to be divided into 7 equal-sized teams, 7 students will be there in each team and 1 student will be left out. That 1 student will assist the PET. With this idea in mind, the PET wants your help to automate this team splitting task. Can you please help him out?
+Input format :
+Input consists of 2 integers. The first integer corresponds to the number of students in the class and the second integer corresponds to the number of teams.
+Output format :
+The output consists of two integers. The first integer corresponds to the number of students in each team and the second integer corresponds to the students who are left out.  
+Sample test cases :
+Input 1 :
+60
+8
+Output 1 :
+7
+4
+Input 2 :
+15
+6
+Output 2 :
+2
+3
+
+#include<iostream> // this library contains cin and cout functions.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    int number_of_students,number_of_teams; // data type declared with the variable.
+    cin>>number_of_students>>number_of_teams; // getting inputs.
+    cout<<(number_of_students/number_of_teams)<<"\n"; // Quotient
+    cout<<(number_of_students%number_of_teams)<<endl; // Remainder
+    // "/n" means new line, we can also use endl as shown above.
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+4]
+
+Single File Programming Question
+Problem Statement :
+The misers discount
+Mrs.Bhulbhul is a miser to the core. She saves money even on petite things. One day she heard a discount offer announced in a mall. She wants to purchase a lot of items to save her money. The discount is given only when at least two items are bought. Since each item has different discount prices, she finds it difficult to check the amount she has saved. So she approaches you to device an automated discount calculator to make her easy while billing.
+Input format :
+Input consists of two floating-point values denoting the price of item1 and item2.
+The third input denotes the discount value in percentage.
+Output format :
+The output consists of three floating values denoting total amount, discounted price, and amount saved.
+Sample test cases :
+Input 1 :
+20.5
+45.4
+10 
+Output 1 :
+65.9
+59.31
+6.59
+Input 2 :
+22.34
+32.34
+11
+Output 2 :
+54.68
+48.6652
+6.0148
+
+#include<iostream> // this library contains cin and cout functions.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    float item_1_price,item_2_price,discount; // data type declared with the variable.
+    float total_amount,saved_amount,discounted_amount; // data type declared with the variable.
+    cin>>item_1_price>>item_2_price>>discount; // getting inputs.
+    total_amount=(item_1_price+item_2_price); // total price of two items.
+    saved_amount=total_amount*(discount/100); // saved amount in the discount.
+    discounted_amount=(total_amount - saved_amount); // remaining amount after subtracting the saved amount from total amount.
+    cout<<total_amount<<"\n";
+    cout<<discounted_amount<<"\n";
+    cout<<saved_amount<<"\n";
+    // "/n" means new line, we can also use endl as shown above.
+    return 0; // we use int function so it should return something.
+    // fixed<<setprecision(2) is not mentioned in the question and as per the test-cases it should not be used.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+5]
+
+Single File Programming Question
+Talent Show
+Mountain View Middle School is all set for organizing their elaborate talent show event of the year, "Stars Onstage". It is a fun-filled event for the students to showcase and build their confidence.
+Of the total audience who had come for the show, 1/3 were boys, 3/6 were girls and the rest of them were adults. If there were 'x' more girls than adults, how many people were there in total? Help the School authorities to find the total people who visited their show.
+Input format :
+First line of the input is an integer 'x', which corresponds to the count of girls more than adults.
+Output format :
+Output the total number of people who had visited the talent show.
+Refer sample input and output for formatting specifications.
+Sample test cases :
+Input 1 :
+50
+Output 1 :
+150 people were there in total
+Input 2 :
+70
+Output 2 :
+210 people were there in total
+
+#include<iostream> // this library contains cin and cout functions.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{   
+    float x; // data type declared with the variable.
+    cin>>x; // getting inputs.
+    cout<<(3*x)<<" people were there in total";
+    /*
+        Total is taken as T
+        Boys is ( 1/3 * T )
+        Girls is ( 3/6 *T )
+        Adults is taken as A
+        Adults is A = ( T -(1/3*T + 3/6*T))
+        X more girls than Adults so, 
+        Girls = X + Adults 
+        (3/6*T) = X + A. On simplifying A and substituting in this equation we get [ 3*X=T ]
+    */
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+6]
+
+Single File Programming Question
+Ramu and Somu are going on a picnic. Ramu packs m apples, n oranges. Somu packs m1 more apples than Ramu and n1 more oranges than Ramu.
+If Somu eats x of his apples and Ramu eats y of Somu's oranges, how many apples and oranges are left in total?
+Input format :
+Input consists of 6 integers m,n,m1,n1,x,y.
+m - corresponds to the apples brought by Ramu.
+n - corresponds to the oranges brought by Ramu.
+m1 – Apples brought by Somu.
+n1 – Oranges brought by Somu.
+x - apples ate by Somu.
+y – oranges ate by Ramu.
+Output format :
+ Print two integers representing remaining apples and oranges.
+Sample test cases :
+Input 1 :
+4 3 2 8 3 2
+Output 1 :
+7 12
+
+#include<iostream> // this library contains cin and cout functions.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    
+    int m_apples,n_oranges,m1_apples,n1_oranges; // data type declared with the variable.
+    int x_apples_ate,y_oranges_ate; // data type declared with the variable.
+    int remaining_apples,remaining_oranges; // data type declared with the variable.
+    cin>>m_apples>>n_oranges>>m1_apples>>n1_oranges>>x_apples_ate>>y_oranges_ate; // getting inputs.
+    remaining_apples = ((m_apples + (m1_apples + m_apples)) - x_apples_ate);
+    remaining_oranges = ((n_oranges +(n1_oranges + n_oranges)) - y_oranges_ate);
+    cout<<remaining_apples<<" "<<remaining_oranges; // Displaying the output.
+    /*
+        m -> corresponds to the apples brought by Ramu.
+        n -> corresponds to the oranges brought by Ramu.
+        m1 more apples than Ramu so, [ m + m1]=apples
+        n1 more oranges than Ramu so, [ n + n1]=oranges
+        total apples = [m+m+m1] , total oranges = [n+n+n1]
+        x -> apples ate by Somu.
+        y –> oranges ate by Ramu.
+    */
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+7]
+
+Single File Programming Question
+INTRAMS is an inter-college cultural fest of famous Engineering college. The students from different colleges, who are participating in the cultural fest will be given a unique registration number.
+The event organizers have arranged a surprise gift to participants. All students, who have 5 as a unit digit in their registration code will get chocolate equal to the square of their registration number. 
+Help the participants to check how many chocolates they will get.
+Input format :
+Registration number
+Output format :
+Chocolate count with registration number, if unit digit is 5 / Not eligible message
+(Refer sample outputs for exact text and format)
+Sample test cases :
+Input 1 :
+25
+Output 1 :
+Square of 25 is 625
+Input 2 :
+33
+Output 2 :
+Unit digit is not 5
+Input 3 :
+123478965
+Output 3 :
+Square of 123478965 is 15247054797471225
+
+#include<iostream> // this library contains cin and cout functions.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    
+    long register_number; // data type declared with the variable.
+    // long as a data-type because input number is large as pre test-cases.
+    cin>>register_number; // getting inputs.
+    register_number % 10 == 5 ? cout<<"Square of "<<register_number<<" is "<<(register_number * register_number) : cout<<"Unit digit is not 5";
+    // Ternary operator  [exp? true: false].
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+8]
+
+Single File Programming Question
+Christmas is in next month. This time John is planning to celebrate it differently. So, he decides to distribute some gifts to all children in the street.He went to a shop to buy a packet of chocolates.
+At the chocolate shop, each packet is having a different number of chocolates. He wants to buy such a packet which contains the number of chocolates, which can be distributed equally among all of his street children.
+Being a friend of John, help him to buy such a packet.
+Input format :
+Each test case contains two integers, N and M, where is N is the number of children in his street and M is the number of chocolates in a packet.
+Output format :
+In each case output "Yes" if he can buy that packet and "No" if he can't buy that packet.(Output is case sensitive)
+Sample test cases :
+Input 1 :
+4 17
+Output 1 :
+17:4-No
+Input 2 :
+100 1200
+Output 2 :
+1200:100-Yes
+
+#include<iostream> // this library contains cin and cout functions.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    
+    int number_of_children,number_of_chocolates; // data type declared with the variable.
+    cin>>number_of_children>>number_of_chocolates; // getting inputs.
+    number_of_chocolates % number_of_children == 0  ? cout<<number_of_chocolates<<":"<<number_of_children<<"-Yes" : 
+    cout<<number_of_chocolates<<":"<<number_of_children<<"-No";
+    // Ternary operator  [exp? true: false].
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PSCPP_Operators_Challenge Yourself
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1]
+
+Single File Programming Question
+Problem Statement :
+Cricket Stadium
+There was a large ground in the center of the city which is rectangular in shape. The Corporation decides to build a Cricket stadium in the area for school and college students, But the area was used as a car parking zone. In order to protect the land from using as an unauthorized parking zone, the corporation wanted to protect the stadium by building a fence. In order to help the workers to build a fence, they planned to place a thick rope around the ground. They wanted to buy only the exact length of the rope that is needed. They also wanted to cover the entire ground with a carpet during the rainy season. They wanted to buy only the exact quantity of carpet that is needed. They requested your help. Can you please help them by writing a program to find the exact length of the rope and the exact quantity of carpet that is required? 
+Input format :
+Input consists of 2 integers. The first integer corresponds to the length of the ground and the second integer corresponds to the breadth of the ground.
+Output format :
+Output Consists of two integers. The first integer corresponds to the length. The second integer corresponds to the quantity of carpet required. 
+Sample test cases :
+Input 1 :
+50
+20
+Output 1 :
+140
+1000
+Input 2 :
+30
+60
+Output 2 :
+180
+1800
+
+#include<iostream> // this library contains cin and cout functions.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    int length_of_ground,breadth_of_ground; // data type declared with the variable.
+    cin>>length_of_ground>>breadth_of_ground; // getting inputs.
+    cout<<(2*(length_of_ground+breadth_of_ground))<<"\n"; // perimeter of the ground( Border of the ground ).
+    cout<<(length_of_ground*breadth_of_ground); // area of the ground for covering with the carpet.
+    // "/n" means new line, we can also use endl as shown above.
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2]
+
+Single File Programming Question
+Total Expenses for the Event
+The prime functionality of an Event Management System is budgeting. An Event Management System should estimate the total expenses incurred by an event and the percentage rate of each of the expenses involved in planning and executing an event. Nikhil, the founder of "Pine Tree" wanted to include this functionality in his company’s Proton Event Management System and requested your help in writing a program for the same.
+The program should get the branding expenses, travel expenses, food expenses, and logistics expenses as input from the user and calculate the total expenses for an event and the percentage rate of each of these expenses.
+Input format :
+The first input is a double value that corresponds to the branding expenses.
+The second input is a double value that corresponds to the travel expenses.
+The third input is a double value that corresponds to the food expenses.
+The fourth input is a double value that corresponds to the logistics expenses.
+Output format :
+The first line of the output should display the double value that corresponds to the total expenses for the Event.
+The next four lines should display the percentage rate of each of the expenses.
+Refer sample input and output for formatting specifications.
+[All text in bold corresponds to input and the rest corresponds to output.]
+Sample test cases :
+Input 1 :
+20000
+40000
+15000
+25000
+Output 1 :
+Total expenses :Rs.100000.00
+Branding expenses percentage : 20.00%
+Travel expenses percentage : 40.00%
+Food expenses percentage : 15.00%
+Logistics expenses percentage : 25.00%
+
+#include<iostream> // this library contains cin and cout functions.
+#include<iomanip> // this library contains fixed setprecision for floating numbers.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    double Branding_expenses,Travel_expenses,Food_expenses,Logistics_expenses,Total_amount; // data type declared with the variable.
+    cin>>Branding_expenses>>Travel_expenses>>Food_expenses>>Logistics_expenses; // getting inputs.
+    Total_amount = Branding_expenses+Travel_expenses+Food_expenses+Logistics_expenses;
+    cout<<"Total expenses :Rs."<<fixed<<setprecision(2)<<Total_amount<<"\n";
+    cout<<"Branding expenses percentage : "<<fixed<<setprecision(2)<<(Branding_expenses/Total_amount)*100<<"%"<<"\n";
+    cout<<"Travel expenses percentage : "<<fixed<<setprecision(2)<<(Travel_expenses/Total_amount)*100<<"%"<<"\n";
+    cout<<"Food expenses percentage : "<<fixed<<setprecision(2)<<(Food_expenses/Total_amount)*100<<"%"<<"\n";
+    cout<<"Logistics expenses percentage : "<<fixed<<setprecision(2)<<(Logistics_expenses/Total_amount)*100<<"%"<<"\n";
+    // percentage of x value is [ x/total * 100] 
+    // Fixing the precision value as 2 after decimal point.
+    // "/n" means new line, we can also use endl as shown above.
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3]
+
+Single File Programming Question
+Problem Statement :
+The newspaper Agency
+Each Sunday, a newspaper agency sells w copies of a special edition newspaper for Rs.x per copy. The cost to the agency of each newspaper is Rs.y. The agency pays a fixed cost for storage, delivery, and so on of Rs.100 per Sunday. The newspaper agency wants to calculate the profit which it obtains only on Sundays. Can you please help them out by writing a program to compute the profit if w, x, and y are given?
+Input format :
+Input consists of 3 integers: w, x, and y. w is the number of copies sold, x is the cost per copy and y is the cost the agency spends per copy. 
+Output format :
+The output consists of a single integer which corresponds to the profit obtained by the newspaper agency.  
+Sample test cases :
+Input 1 :
+1000
+2
+1
+Output 1 :
+900
+Input 2 :
+1200
+12
+5
+Output 2 :
+8300
+
+#include<iostream> // this library contains cin and cout functions.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    int w_copies,x_cost,y_agency_spends,profit_obtained; // data type declared with the variable.
+    cin>>w_copies>>x_cost>>y_agency_spends; // getting inputs.
+    profit_obtained=(w_copies*x_cost)-(w_copies*y_agency_spends)-100; 
+    /*
+        "w" copies which is sold for "x" price per copy and the agency bought those copies for "y" price per copy and spends Rs.100 for 
+        storing and distribution.
+    */
+    cout<<profit_obtained; // Displaying output.
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+4]
+
+Single File Programming Question
+Write a C++ code to print the area of a pentagon given its diagonal. The formula is:
+1/8 d^2 (-5+ sqrt{45})*sqrt{ sqrt{20} + 5 } }  =
+Input format :
+Single floating point value
+Output format :
+Output displays the area of the rhombus as floating point value.
+Code constraints :
+Input>0
+Sample test cases :
+Input 1 :
+5.1
+Output 1 :
+17.0928
+Input 2 :
+65
+Output 2 :
+2776.52
+
+#include<iostream> // this library contains cin and cout functions.
+#include<cmath> // inbuilt mathematical functions containing library.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    float diagonal,area_of_a_pentagon; // data type declared with the variable.
+    cin>>diagonal; // getting inputs.
+    area_of_a_pentagon = (diagonal*diagonal*(-5 + sqrt(45))*sqrt(sqrt(20)+5))/8; // area_of_a_pentagon.
+    // square root of 25 is 5 which is done by an inbuilt function sqrt() whose function are there in the cmath header file.
+    cout<<area_of_a_pentagon; // Displaying output.
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+5]
+
+Single File Programming Question
+Problem Statement :
+Four musketeers
+Dhoni joined the group of 3 Musketeers and now their group is called four Musketeers. Meanwhile, Dhoni also moved to a new house in the same locality nearby to the other three. Currently, the houses of Sachin, Dravid and Ganguly are located in the shape of a triangle. When the three musketeers asked Dhoni about the location of his house, he said that his house is equidistant from the houses of the other 3. Can you please help them find out the location of the house? Given the 3 locations {(a1,b1), (a2,b2) and (a3,b3)} of a triangle, write a program to determine the point which is equidistant from all the 3 points. 
+Input format :
+Input consists of 6 integers.
+The first integer corresponds to a1.
+The second integer corresponds to b1.
+The third and fourth integers correspond to a2 and b2 respectively.
+The fifth and sixth integers correspond to a3 and b3 respectively.
+Output format :
+The output consists of two floating-point numbers which correspond to the location of the house.
+Sample test cases :
+Input 1 :
+2
+4
+10
+15
+5
+8 
+Output 1 :
+5.66667
+9
+Input 2 :
+3
+4
+10
+12
+5
+8
+Output 2 :
+6
+8
+
+#include<iostream> // this library contains cin and cout functions.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    int a3,b3,a1,b1,a2,b2; // data type declared with the variable.
+    float centroid_x,centroid_y; // data type declared with the variable.
+    cin>>a1>>b1>>a2>>b2>>a3>>b3; // getting inputs.
+    centroid_x = (a1+a2+a3) / 3.0; 
+    /* 
+        Primitive data types - byte,short,int,long,float,double,boolean,char.So if we divide by 3 it will be fully integer type so only using 3.0 or 
+        it can be achieved by using float instead of int data type.
+    */
+    centroid_y = (b1+b2+b3) /3.0;
+    // Centroid(x,y) formula is = [ (x1+x2+x3)/3 , (y1+y2+y3)/3 ].
+    cout<<centroid_x<<"\n"<<centroid_y; // Displaying output.
+    // "/n" means new line, we can also use endl as shown above.
+    // fixed<<setprecision(2) is not mentioned in the question and as per the test-cases it should not be used.
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
