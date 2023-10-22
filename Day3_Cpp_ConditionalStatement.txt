@@ -1,0 +1,894 @@
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PSCPP_Conditional_Operator_ClassWork
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1]
+
+Kumar, the admission incharge in a famous Engineering college wants to write a program to find the eligibility of admission for a professional course based on the following criteria.
+Marks in Maths >=65,
+Marks in Phy >=55,
+Marks in Chem>=50 and
+Total in all three subject >=180
+Help Kumar to write a suitable program.
+Input format :
+Maths Physics and Chemistry marks in first line separated by space
+Output format :
+Eligible or Not.
+(Refer Sample output for exact statement and format)
+Sample test cases :
+Input 1 :
+45 78 90
+Output 1 :
+Sorry. You are not eligible
+Input 2 :
+69
+70
+50
+Output 2 :
+Congrats. You are eligible
+Whitelist
+Set 1:
+if
+else
+
+#include<iostream> // this library contains cin and cout functions.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    int maths,physics,chemistry,total; // data type declared with the variable.
+    cin>>maths>>physics>>chemistry; // getting inputs.
+    total = maths + physics + chemistry; // Total of 3 subject marks.
+    if(maths>=65 && physics>=55 && chemistry>=50 && total>=180)
+    {
+        cout<<"Congrats. You are eligible";
+    }
+    else
+    {
+        cout<<"Sorry. You are not eligible";
+    }
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2]
+
+Write a program that prompts the user to input a number. The program should then output the number and a message saying whether the number is positive, negative, or zero.
+Input format :
+The input consists of a number.
+Output format :
+The output prints whether the number is positive, negative or zero.
+Refer sample input and output for formatting specifications.
+Sample test cases :
+Input 1 :
+5
+Output 1 :
+5 is positive
+Input 2 :
+-8
+Output 2 :
+-8 is negative
+Input 3 :
+0
+Output 3 :
+0 is zero
+
+#include<iostream> // this library contains cin and cout functions.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    int num; // data type declared with the variable.
+    cin>>num; // getting inputs.
+    if(num==0) // if...else... Conditional statement.
+    {
+        cout<<num<<" is zero";
+    }
+    else if(num>0)
+    {
+        cout<<num<<" is positive";
+    }
+    else
+    {
+        cout<<num<<" is negative";
+    }
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3]
+
+Guru got 2 weeks internship in a famous web development company. His first task is to read one character gender (M/m/F/f) and print the full gender (Male/Female/Invalid Input) using a switch case statement. Help Guru to complete his first task.
+Input format :
+First line of input consists of single character
+Output format :
+Male / Female /Invalid Input
+Sample test cases :
+Input 1 :
+f
+Output 1 :
+Female
+Input 2 :
+M
+Output 2 :
+Male
+Input 3 :
+4
+Output 3 :
+Invalid Input
+
+#include<iostream> // this library contains cin and cout functions.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    char ch; // data type declared with the variable.
+    cin>>ch; // getting inputs.
+    switch(ch) // Swiitch case... Conditional Statement.
+    {
+        case 'M':
+        case 'm':
+            cout<<"Male";
+            break;
+        case 'F':
+        case 'f':
+            cout<<"Female";
+            break;
+        default :
+            cout<<"Invalid Input";
+    }
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+4]
+
+In a famous jewelry, customers are grouped according to age and gender.
+Group1 Males under 25 years old
+Group 2 Females under 25 years old
+Group 3 Males between 25 - 45 years old
+Group 4 Females between 25 - 45 years old
+Group 5 All people over 45 years old.
+Babu wants to write a program to display the customer's group. Help Babu. 
+Note : Gender code for a male is 1 and for female is 2. Display Invalid if user enters other gender codes
+Input format :
+Age in first line
+Gender code in second line
+Output format :
+Group number
+Sample test cases :
+Input 1 :
+23
+1
+Output 1 :
+Group 1
+Whitelist
+Set 1:
+if
+else
+
+#include<iostream> // this library contains cin and cout functions.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    int age,g_code; // data type declared with the variable.
+    cin>>age>>g_code; // getting inputs. 
+    // if..else if...else Conditional Statement.
+    if(age<25 && g_code==1)
+    {
+        cout<<"Group 1";  // less than 25 male.
+    }
+    else if(age<25 && g_code==2)
+    {
+        cout<<"Group 2"; // less than 25 female.
+    }
+    else if(age>=25 && age<=45 && g_code==1)
+    {
+        cout<<"Group 3"; // greater-than or equal to 25 and less-than or equal to 45 male.
+    }
+    else if(age>=25 && age<=45 && g_code==2)
+    {
+        cout<<"Group 4"; // greater-than or equal to 25 and less-than or equal to 45 female.
+    }
+    else if(age>45 && g_code==1 || g_code==2)
+    {
+        cout<<"Group 5"; // greater-than 45 male.
+    }
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+5]
+
+Hanging Bridge
+At the annual "KrackerJack Karnival", there was a newest attraction ever in the City, the "Hanging Bridge". Visitors will be able to walk 200ft on the bridge, hanging around 50ft above the ground, and enjoy a wide-angle view of the breathtaking greenery.
+The Hanging Bridge was inaugurated successfully in co-ordination with the Event Manager Rahul. There is a limit on the maximum number of people on the bridge and Rahul has to now ensure the count of people on the bridge currently should not exceed the limit. He then approximately estimated that C adults and D kids who came to the show, were on the hanging bridge. He also noticed that there are L legs of the people touching the bridge.
+Rahul knows that kids love to ride on the adults and they might ride on the adults, and their legs won't touch the ground and hence he would miss counting their legs. Also Rahul knew that the adults would be strong enough to ride at max two kids on their back.
+Rahul is now wondering whether he counted the legs properly or not. Specifically, he is wondering is there some possibility of his counting being correct. Please help Rahul in finding it.
+Input format :
+The only line of input contains three space separated integers C, D, L denoting number of the adults, number of the kids and number of legs of people counted by Rahul, respectively.
+Output format :
+Output a single line containing a string "yes" or "no" (both without quotes) according to the situation.
+Refer sample input and output for formatting specifications.
+Sample test cases :
+Input 1 :
+1 1 4
+Output 1 :
+yes
+Input 2 :
+2 4 16
+Output 2 :
+no
+
+#include<iostream> // this library contains cin and cout functions.
+using namespace std; // to use cin,cout like functions from standard libraries to perform that specific functions tasks.
+int main()
+{
+    int adult,child,legs; // data type declared with the variable.
+    cin>>adult>>child>>legs; // getting inputs.
+    int calculation = 2*(adult +child); // calculating correct leg's count.
+    // if..else Conditional Statement.
+    if(calculation==legs)
+    {
+        cout<<"yes";
+    }
+    else 
+    {
+        cout<<"no";
+    }
+    return 0; // we use int function so it should return something.
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PSCPP_Conditional _Practice
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1]
+
+Kalyani Jewellers has planned to build a new showroom in Coimbatore city. They have selected the area to build the showroom and it is in a triangle shape. Ravi, a civil engineer from VIP construction is the in-charge of this project. Ragavan, founder of VIP construction asked Ravi to find the exact shape of the selected area. Help Ravi to find the exact triangle shape.
+Equilateral Triangle - If all sides are equal
+Isosceles Triangle - If any two sides equal
+Scalene Triangle - No sides are equal
+Input format :
+Sides of the triangle in the separate lines
+Output format :
+The output prints the type of triangle.
+Sample test cases :
+Input 1 :
+18
+18
+18
+Output 1 :
+Equilateral Triangle
+Input 2 :
+12
+25
+15
+Output 2 :
+Scalene Triangle
+Input 3 :
+52
+52
+323
+Output 3 :
+Isosceles Triangle
+Whitelist
+Set 1:
+if
+else
+
+#include<iostream> // This library contains the cin and cout functions.
+using namespace std; // To perform cin,cout like functions from standard libraries to perform that specific function task.
+int main()
+{
+    int s1,s2,s3; // Declaring data types with variables.
+    cin>>s1>>s2>>s3; // Geting inputs.
+    //  if..else if...else Conditional Statement.
+    if(s1==s2 && s2==s3)
+    {
+        cout<<"Equilateral Triangle"; // All sides equal.
+    }
+    else if(s1==s2 || s2==s3 || s1==s3)
+    {
+        cout<<"Isosceles Triangle"; // Any two sides are equal.
+    }
+    else
+    {
+        cout<<"Scalene Triangle"; // All sides are different.
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2]
+
+Viny recently met an astrologer Balaj Kanth, who enquires Viny about his day of birth. Viny is unable to remember the same. Write a program that calculates the day of the week for any particular date to help Viny.
+Input format :
+Date in DD MM YYYY format (Space separated) in first line
+Output format :
+Display the day corresponding to the given date
+Code constraints :
+1<=Date<=31
+1<=Month<=12
+Sample test cases :
+Input 1 :
+02 10 2019
+Output 1 :
+Wednesday
+Whitelist
+Set 1:
+if
+Set 2:
+switch
+
+// Zeller’s congruence is an algorithm devised by Christian Zeller to calculate the day of the week for any Julian or Gregorian calendar date.
+#include<iostream> // This library contains the cin and cout functions.
+using namespace std; // To perform cin,cout like functions from standard libraries to perform that specific function task.
+int main()
+{
+    int date,month,year; // Declaring data types with variables.
+    int result; // Declaring data types with variables.
+    cin>>date>>month>>year; // Geting inputs.
+    if(month==1) // First month means month number is changed to 13 and year--.
+    {
+        month=13;
+        year--;
+    }
+    if(month==2) // Second month means month number is changed to 13 and year--.
+    {
+        month=14;
+        year--;
+    }
+    result = ( date + 13*(month + 1)/5 + (year%100) + ((year%100)/4) + ((year/100)/4) + 5*(year/100) ) % 7; // To find the Week day's number.
+    
+    switch(result) // To print the Week day starts from 0-Saturday and ends for 6-Friday.
+    {
+        case 0:
+            cout<<"Saturday";
+            break;
+        case 1:
+            cout<<"Sunday";
+            break;
+        case 2:
+            cout<<"Monday";
+            break;
+        case 3:
+            cout<<"Tuesday";
+            break;
+        case 4:
+            cout<<"Wednesday";
+            break;
+        case 5:
+            cout<<"Thursday";
+            break;
+        case 6:
+            cout<<"Friday";
+            break;
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3]
+
+Kalai has started an Event Management Company named “City Events and Decors”. The focus of this venture is to provide event management solutions for both personal functions and private parties, Organize and manage corporate events that leave a lasting impression and project your perfection.
+In order to get herself equipped with the event management skills, she is organizing an Evening Party everyday in the first month. She booked a popular hall named “GRG Mahal” that could accommodate around 1000 people. She expected more crowd to this party during week ends and so she conducted the week end parties in the GRG Open Ground. After a month, she has to submit a report to the Board of Directors on how succesful these parties were. 
+A week day party is considered to be succesful if the number of people attending this party is between 700 and 1000, both inclusive. A weekend party is considered to be successful if the number of people attending the party is at least 1500.
+Can you please help Kalai in classifying whether the given parties were successful or not?
+Given the day details and the number of people who have attended the party on that day, write a program to classify the party as successful or not.
+Input format :
+The first line of the input consists of a string that corresponds to the day details. The 7 days are denoted as “SUN”, “MON”, “TUE”, “WED”, “THU”, “FRI” and “SAT”.
+Friday, Saturday and Sunday are considered to be week ends.
+The second line of the input consists of an integer that corresponds to the number of people who have attended the party.
+Output format :
+Output consists of a string --- “Successful” or “Unsuccessful” or “Invalid Input”.
+If the input string is not in one of the valid days or the if the input integer is negative, print Invalid Input.
+Refer sample input and output for formatting specifications.
+Sample test cases :
+Input 1 :
+MON
+800
+Output 1 :
+Successful
+Input 2 :
+FRI
+1200
+Output 2 :
+Unsuccessful
+Input 3 :
+MAN
+800
+Output 3 :
+Invalid Input
+Whitelist
+Set 1:
+if
+else
+
+#include<iostream> // This library contains the cin and cout functions.
+using namespace std; // To perform cin,cout like functions from standard libraries to perform that specific function task.
+int main()
+{
+    string day; // Declaring data type with variables.
+    int population; // Declaring data type with variables.
+    cin>>day>>population; // Getting Input.
+    if(population>=0) 
+    {
+        if(day=="MON" || day=="TUE" || day=="WED" || day=="THU") // week days check.
+        {
+            if(population>=700 && population<=1000)  // Between 700-1000.
+            {
+                cout<<"Successful";
+            }
+            else
+            {
+                cout<<"Unsuccessful";
+            }
+        }
+        else if(day=="FRI" || day=="SAT" || day=="SUN") // Week end check.
+        {
+            if(population>=1500) // Above and equal to 1500.
+            {
+                cout<<"Successful";
+            }
+            else
+            {
+                cout<<"Unsuccessful";
+            }
+        }
+        else
+        {
+            cout<<"Invalid Input"; // if the day is not a proper Input then it will be Invalid Input. 
+        }
+    }
+    else
+    {
+         cout<<"Invalid Input"; // if the population is less than zero then Invalid Input.
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+4]
+
+The Jumbo Game Fair is the premier event of its kind for kids interested in some intellectual and cognitive brain games. Alex, a middle school boy is visiting the fair where he is very much drawn by the Card game. The game’s rules are:
+A player needs to pick 3 cards from a big lot of cards. There are 4 types of Cards namely Spade(S), Heart(H), Club(C) and Diamond (D).
+If all the 3 cards that the player picks are of the same type and same number, they get a Double Discount.
+If all the 3 cards are of the same type or if they all have the same number, they get a Discount.
+Otherwise, they do not get a Discount.
+Alex has now picked 3 cards and is awaiting to know if he has got a Discount. Please help him to know if he has won the Discount or not.
+Input format :
+There are 3 lines of input.
+Each of the lines consists of a character and integer input, which corresponds to the type of the card and the number in it that Alex picked. The type of card and the number are separated by a single space.
+Output format :
+The output should display "Double Discount" or "Discount" or "No Discount" based on the conditions given.
+Refer sample input and output for formatting specifications.
+Sample test cases :
+Input 1 :
+H 2
+H 2
+H 2
+Output 1 :
+H 2
+H 2
+H 2
+Double Discount
+Input 2 :
+D 2
+H 2
+S 2
+Output 2 :
+D 2
+H 2
+S 2
+Discount
+Input 3 :
+c 2
+d 3
+h 4
+Output 3 :
+c 2
+d 3
+h 4
+No Discount
+
+#include<iostream> // This library contains the cin and cout functions.
+using namespace std; // To perform cin,cout like functions from standard libraries to perform that specific function task.
+int main()
+{
+    string card[3]; // Declaring data type with variables.
+    int num[3]; // Declaring data type with variables.
+    for(int i=0;i<3;i++)
+    {
+        cin>>card[i]>>num[i]; //Getting input.
+        cout<<card[i]<<" "<<num[i]<<"\n"; // Displaying the card's and its number's.
+    }
+    if(card[0]==card[1] && card[1]==card[2] && num[0]==num[1] && num[1]==num[2])
+    {
+        cout<<"Double Discount"; // All card's and number's are same.
+    }
+    else if(card[0]==card[1] && card[1]==card[2] || num[0]==num[1] && num[1]==num[2])
+    {
+        cout<<"Discount"; // if all 3 card's are same (or) else numbers are same in all 3 cards. 
+    }
+    else
+    {
+        cout<<"No Discount"; // if all are different.
+    }
+    return 0; // int data type so it should return something. 
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+5]
+
+Its Diwali season. Employees in Lakshmi mills are excited to know their Diwali bonus. Rohit, the HR of the company displayed the chart on the notice board and asked the employees to calculate their bonus. Write a program to help employees to calculate their bonuses.
+Year of experience    Bonus
+<1 year               No Bonu
+1 to 5 years          Rs. 5,000
+5 to 10 years         Rs. 10,000
+>10 years             25% of Basic pay
+Input format :
+Year of experience
+Basic Pay
+Output format :
+Bonus amount with Diwali wishes
+Sample test cases :
+Input 1 :
+.5
+5000
+Output 1 :
+No Bonus
+Happy Diwali
+Input 2 :
+2
+15000
+Output 2 :
+Bonus : Rs.5000
+Happy Diwali
+Input 3 :
+15
+50000
+Output 3 :
+Bonus : Rs.12500.00
+Happy Diwali
+Whitelist
+Set 1:
+if
+else
+
+#include<iostream> // This library contains the cin and cout functions.
+#include<iomanip> // This library contains fixed setprecision for floating numbers.
+using namespace std; // To perform cin,cout like functions from standard libraries to perform that specific function task.
+int main()
+{
+    double year,pay; // Declaring data type with variables.
+    cin>>year>>pay; //Getting input.
+    if(year<1) // Conditional Statement if...else if...else..
+    {
+        cout<<"No Bonus\nHappy Diwali"; // Less than a Year of experience.
+    }
+    else if(year>=1 && year<5)
+    {
+        cout<<"Bonus : Rs.5000\nHappy Diwali"; // Less than 5 Years of experience.
+    }
+    else if(year>=5 && year<10)
+    {
+        cout<<"Bonus : Rs.10000\nHappy Diwali"; // Less than 10 Years of experience.
+    }
+    else
+    {
+        cout<<fixed<<setprecision(2)<<(pay*0.25)<<"\nHappy Diwali"; // More than 10 Years of experience.
+    }
+    return 0; // int data type so it should return something. 
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+6]
+
+Krish is continuously singing below song after attending algebra class.
+"X is equal to minus b plus or minus the square root of b-squared minus four a c ALL over two a"
+His roommate, Raghav is not able to sleep because of Krish song. So, Raghav asked Krish to write a program to find the root of a quadratic equation using the above song. Help Krish to complete this program.
+Note : Ax2 + Bx + C = 0, where A, B and C are real numbers and A ≠ 0
+Input format :
+Value of A, B, C (Space separated)
+Output format :
+Roots as shown in sample outputs
+Code constraints :
+A≠0
+Sample test cases :
+Input 1 :
+1 6 9
+Output 1 :
+Root1 = -3.00
+Root2 = -3.00
+Input 2 :
+1 5 6
+Output 2 :
+Root1 = -2.00
+Root2 = -3.00
+Input 3 :
+1 5 7
+Output 3 :
+Root1 = -2.50+0.87i
+Root2 = -2.50-0.87i
+Whitelist
+Set 1:
+if
+else
+
+#include<iostream> // This library contains the cin cout functions.  
+#include<iomanip> // This library contains fixed setprecision for floating numbers.
+#include<cmath> // This library has in-built math functions like square root ans absolute value etc... .
+using namespace std; // To perform cin,cout like functions from standard libraries to perform that specific function task.
+int main()
+{
+    double a,b,c; // data type with variables. 
+    cin>>a>>b>>c; // getting inputs.
+    double discriminant= b*b-4*a*c; // discriminant = b square - 4 ac 
+    // Original root finding formula is [  -b (+ or -) square root of (b square - 4 ac) ] / 2a .
+    if(discriminant>=0) // square root value is positive.
+    {
+        cout<<fixed<<setprecision(2)<<"Root1 = "<<((-b+sqrt(discriminant))/(2*a))<<"\n"; 
+        cout<<fixed<<setprecision(2)<<"Root2 = "<<((-b-sqrt(discriminant))/(2*a))<<"\n"; 
+    }
+    else // square root value is negative we need to take it as i = -1.
+    {
+        cout<<fixed<<setprecision(2)<<"Root1 = "<<(-b/2*a)<<"+"<<sqrt(abs(discriminant))/(2*a)<<"i\n";
+        cout<<fixed<<setprecision(2)<<"Root2 = "<<(-b/2*a)<<"-"<<sqrt(abs(discriminant))/(2*a)<<"i\n";
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+7]
+
+Sanjay got promotion and now he is a manager in the SBI Credit card division. There are basic eligibility criteria required to apply for any SBI Credit Cards.
+The age of the primary applicant must be between 21 years to 60 years.
+The age of the add-on card applicant must be above 18 years.
+Must be either salaried, self-employed, student, or retired pensioner.
+Primary applicants should have a stable income (gross) of up to Rs.3 lakh per year.
+Accept required inputs from the user, Write a program to check if the person meets the bank’s eligibility criteria.
+Input format :
+First line of input is age of the primary applicant
+Second line of input is age of the add-on card applicant
+Third line of input is employment type code (1 for salaried, 2 self-employed,3 for student, and 4 for retired pensioner)
+Fourth line of input is income
+Output format :
+Eligible / Not Eligible as shown in sample output.
+Refer sample output for exact text and format
+Code constraints :
+21<=Age of the primary applicant <=60 years
+Age of the add-on card applicant>=18 years
+1<=Employee code <=4 (Salaried =1, Self-employed=2, Student=3, Retired pensioner=4)
+Sample test cases :
+Input 1 :
+45
+20
+2
+300000
+Output 1 :
+Yes. You are eligible for SBI credit cards
+Input 2 :
+45
+15
+2
+300000
+Output 2 :
+No. You are not eligible for SBI credit cards
+Whitelist
+Set 1:
+if
+else
+
+#include<iostream> // This library contains the cin cout functions.  
+using namespace std; // To perform cin,cout like functions from standard libraries to perform that specific function task.
+int main()
+{
+    int age_application,age_card,employment_code,income_year; // data type with variables. 
+    cin>>age_application>>age_card>>employment_code>>income_year; // getting inputs.
+    // Conditional Statement if ... else ...
+    if(age_application>=21 && age_application<=60 && age_card>=18 && employment_code>=1 &&  employment_code<=4 && income_year>=3'00'000)
+    {
+        cout<<"Yes. You are eligible for SBI credit cards";
+    }
+    else
+    {
+        cout<<"No. You are not eligible for SBI credit cards";
+    }
+    return 0; // int type so it should return something. 
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+8]
+
+“DIWALI DAMAKKA” is the most successful event dedicated to children and families. The Event has more than 20 rides for children and adults and the organizers always ensure not to compromise on the safety of the visitors.
+To ensure the safety of the rides, the organizers have graded the rides in the fair according to the following conditions:
+Hurl Factor must be greater than 50.
+Spin Factor must be greater than 60.
+Speed factor must be greater than 100.
+The grades are as follows:
+Grade is 10 if all three conditions are met.
+Grade is 9 if conditions (i) and (ii) are met.
+Grade is 8 if conditions (ii) and (iii) are met.
+Grade is 7 if conditions (i) and (iii) are met.
+Garde is 6 if only one condition is met.
+Grade is 5 if none of three conditions are met.
+Write a program to display the grade of the rides, given the values of hurl factor, spin factor and speed factor of the ride under consideration.
+Input format :
+First line of the input consists of 3 integers that gives the Hurl Factor, Spin Factor and Speed Factor of the ride, each separated by a space.
+Output format :
+Output should display the grade of the ride depending on Conditions.
+Refer sample input and output for formatting specifications.
+Sample test cases :
+Input 1 :
+51 89 150
+Output 1 :
+10
+Input 2 :
+45 69 102
+Output 2 :
+8
+Whitelist
+Set 1:
+if
+else
+Set 2:
+switch
+
+#include<iostream> // This library contains the cin cout functions.  
+using namespace std; // To perform cin,cout like functions from standard libraries to perform that specific function task.
+int main()
+{
+    int Hurl,Spin,Speed ; // data type with variables. 
+    cin>>Hurl>>Spin>>Speed; // getting inputs.
+    // Conditional Statement if ... else if...else .
+    if(Hurl>50 && Spin>60 && Speed>100)
+    {
+        cout<<"10"; // all 3 condition's  are met.
+    }
+    else if(Hurl>50 && Spin>60)
+    {
+        cout<<"9"; // 1st and 2nd conditions are met.
+    }
+    else if(Spin>60 && Speed>100)
+    {
+        cout<<"8"; // 2nd and 3rd conditions are met.
+    }
+    else if(Hurl>50 && Speed>100)
+    {
+        cout<<"7"; //1st and 3rd conditions are met.
+    }
+    else if(Hurl>50 || Spin>60 || Speed>100)
+    {
+        cout<<"6"; // Any one condition is met.
+    }
+    else
+    {
+        cout<<"5"; // if no conditions are met.
+    }
+    return 0; // int type so it should return something. 
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+9]
+
+Sanjay, the Manager of "The Chennai silks" decided to give special Diwali gifts to their customers. He planned to give their different gifts to the customer based on age. Write a suitable program to count the number of customers in each category as per the below information.
+Age          Category
+0 to 5         Baby
+6 to 17                    Attending school 
+18 and above   Adult
+Input format :
+Number of person in first line(N).
+Age of each person(N) in second line.
+Output format :
+Category wise count as shown in the sample output.
+Code constraints :
+Age>=0
+Sample test cases :
+Input 1 :
+15
+2 5 9 12 16 19 23 26 30 33 37 40 44 47 51
+Output 1 :
+Baby: 2
+Attending school: 3
+Adult: 10
+Whitelist
+Set 1:
+if
+Set 2:
+while
+
+#include<iostream> // This library contains the cin cout functions.  
+using namespace std; // To perform cin,cout like functions from standard libraries to perform that specific function task.
+int main()
+{
+    int no_of_persons ; // data type with variables.
+    int each_person_age; // data type with variables.
+    int child=0 , adult=0 , schools_students=0; // data type with variables.
+    cin>>no_of_persons; // getting inputs.
+    // looping Statement
+    while(no_of_persons--)
+    {
+        cin>>each_person_age; // Getting each time age as an inputs, the value will be re-allocated each time inside the loop.
+        // Conditional Statement if ... else if...else .
+        if(each_person_age<=5)
+        {
+            child++; // 0-5 age count.
+        }
+        else if(each_person_age>5 && each_person_age<=17)
+        {
+            schools_students++; // 6-17 age count.
+        }
+        else
+        {
+            adult++; // 18 and above count.
+        }
+    }
+    cout<<"Baby: "<<child<<endl; 
+    cout<<"Attending school: "<<schools_students<<endl; // "/n" means new line, we can also use endl as shown above.
+    cout<<"Adult: "<<adult;
+    return 0; // int type so it should return something. 
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+10]
+
+Sandy wants to design a body fat percentage calculation is as follows.
+BF% = 64 − ( 20 * (height/waist) )
+The list below comes from the American Council and shows the average percentages in specified groups.
+Essential fat: 2–5%
+Athletes: 6–13%
+Fitness: 14-17%
+Average: 18–24%
+Obese: 25%+ 
+Input format :
+Height value and Waist value in the first line separated by space
+Output format :
+Body fat value along with group
+(Refer sample outputs)
+Sample test cases :
+Input 1 :
+120 40
+Output 1 :
+4.00 : Essential fat
+Input 2 :
+120 60
+Output 2 :
+24.00 : Average
+Input 3 :
+120 45.8
+Output 3 :
+11.60 : Athletes
+Input 4 :
+120.3 79.5
+Output 4 :
+33.74 : Obese
+Whitelist
+Set 1:
+if
+else
+
+#include<iostream> // This library contains the cin cout functions.
+#include<iomanip> // this library contains fixed setprecision for floating numbers.
+using namespace std; // To perform cin,cout like functions from standard libraries to perform that specific function task.
+int main()
+{
+    double height,waist; // data type with variables.
+    cin>>height>>waist; // getting inputs.
+    double BF = 64 - ( 20 * (height/waist) ); // Body Fat Calculator give the result in %.
+    // Conditional Statement if ... else if...else .
+    if(BF>=2 && BF<=5)
+    {
+        cout<<fixed<<setprecision(2)<<BF<<" : Essential fat";
+    }
+    else if(BF>=6 && BF<=13)
+    {
+        cout<<fixed<<setprecision(2)<<BF<<" : Athletes";
+    }
+    else if(BF>=14 && BF<=17)
+    {
+        cout<<fixed<<setprecision(2)<<BF<<" : Fitness";
+    }
+    else if(BF>=18 && BF<=24)
+    {
+        cout<<fixed<<setprecision(2)<<BF<<" : Average";
+    }
+    else
+    {
+        cout<<fixed<<setprecision(2)<<BF<<" : Obese";
+    }
+    return 0; // int type so it should return something. 
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
